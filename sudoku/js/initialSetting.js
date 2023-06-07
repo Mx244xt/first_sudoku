@@ -1,9 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const difficulty = urlParams.get('value');
 
-console.log(difficulty); // 'value1'
-
-// const difficulty = 3;
 localStorage.clear();
 function createBoard() {
   const containers = document.getElementById("grid-container");
@@ -18,7 +15,6 @@ function createBoard() {
       let indexRow = Math.floor((row - 1) / 3);
       let indexCol = Math.floor((col - 1) / 3);
       mass.classList.add('index' + ((indexRow * 3 + indexCol) + 1));
-      // mass.setAttribute('onclick', 'boardSelection()');
       mass.setAttribute('id', 'No.' + count)
       mass.setAttribute('data-ans', (board[ 0 ][ row - 1 ][ col - 1 ]));
       if (board[ 1 ][ row - 1 ][ col - 1 ] != 0) {
