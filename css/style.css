@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 20%;
+}
+
+h3 {
+  margin: 0%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  width: 50%;
+  margin: 10px;
+  padding: 15px 30px;
+  background-color: #b9def8;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+#demo {
+  opacity: 10%;
+  color: black;
+}
+
+#easy {
+  background-color: #23A8E2;
+}
+
+#normal {
+  background-color: #1CAD35;
+}
+
+#hard {
+  background-color: #EA524E;
+}
+
+@media screen and (max-width: 600px) {
+  button {
+    font-size: 6vw;
+    width: 90%;
+  }
+
+  img {
+    width: 80%;
+  }
+}

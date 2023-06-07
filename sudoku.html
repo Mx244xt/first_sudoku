@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数独アプリ</title>
+    <link rel="stylesheet" href="./css/sudoku.css" />
+    <link rel="stylesheet" href="./css/finish.css" />
+  </head>
+  <body>
+    <div id="container" class="cherry-blossom-container">
+      <h1>初めての数独</h1>
+      <section>
+        <input
+          type="button"
+          value="戻る"
+          onclick="location.href='./index.html'"
+        />
+        <div id="miss"></div>
+        <div id="haed">
+          <button id="resetTime">
+            <img class="timerIcon" src="./image/reset_button.png" alt="再生" />
+          </button>
+          <button id="startTime">
+            <img class="timerIcon" src="./image/play_button.png" alt="再生" />
+          </button>
+          <button id="pauseTime" hidden>
+            <img
+              class="timerIcon"
+              src="./image/pause_button.png"
+              alt="一時停止"
+            />
+          </button>
+          <img class="timerIcon" src="./image/timer.png" alt="Timer" />
+          <div id="timer">00:00:00</div>
+        </div>
+      </section>
+      <div id="grid-container"></div>
+      <!-- <section>
+          <p class="iconText">
+            <img class="icon" src="./image/Undo.png" alt="元に戻す" />元に戻す
+        </p>
+        <p class="iconText">
+          <img class="icon" src="./image/eraser.png" alt="消しゴム" />消しゴム
+        </p>
+      </section> -->
+      <div id="inputPanel-container"></div>
+    </div>
+    <script type="text/javascript" src="./js/problemGeneration.js"></script>
+    <script type="text/javascript" src="./js/initialSetting.js"></script>
+    <script type="text/javascript" src="./js/clickEvent.js"></script>
+    <script type="text/javascript" src="./js/cherryBlossom.js"></script>
+    <script type="text/javascript" src="./js/timerEvent.js"></script>
+  </body>
+</html>
