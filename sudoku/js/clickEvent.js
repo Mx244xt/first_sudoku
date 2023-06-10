@@ -29,16 +29,27 @@ function colorizeSelection(clickedElement) {
     if (element.textContent == sameNumber && sameNumber != "") {
       element.style.backgroundColor = '#b9def8';
     } else {
-      element.style.backgroundColor = '';
+      element.style.backgroundColor = '#F5F5F5';
     }
-    for (let k = 1; k <= 3; k++) {
-      if (element.classList.contains(classList[ k ])) {
-        element.style.backgroundColor = '#e4e6f3';
-      }
-    }
+    console.log(classList);
+    areaHighlight(element, classList)
+    // for (let k = 1; k <= 3; k++) {
+    //   if (element.classList.contains(classList[ k ])) {
+    //     element.style.backgroundColor = '#e4e6f3';
+    //   }
+    // }
   }
   clickedElement.style.backgroundColor = '#b9def8';
 }
+
+function areaHighlight(element, classList) {
+  for (let k = 1; k <= 3; k++) {
+    if (element.classList.contains(classList[ k ])) {
+      element.style.backgroundColor = '#e4e6f3';
+    }
+  }
+}
+
 
 window.addEventListener('DOMContentLoaded', function () {
   targetCount();
