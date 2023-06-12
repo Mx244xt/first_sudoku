@@ -5,22 +5,26 @@ localStorage.clear();
 function createBoard() {
   const containers = document.getElementById("grid-container");
   let board = problemGeneration(difficulty);
+  if(window.localStorage) {
+    let json = JSON.stringify(board, undefined, 1);
+    localStorage.setItem('board', json);
+  }
   let count = 1;
   for (let row = 1; row <= 9; row++) {
     for (let col = 1; col <= 9; col++) {
-      let mass = document.createElement('div');
-      mass.classList.add('mass');
-      mass.classList.add('col' + row);
-      mass.classList.add('row' + col);
-      let indexRow = Math.floor((row - 1) / 3);
-      let indexCol = Math.floor((col - 1) / 3);
-      mass.classList.add('index' + ((indexRow * 3 + indexCol) + 1));
-      mass.setAttribute('id', 'No.' + count)
-      mass.setAttribute('data-ans', (board[ 0 ][ row - 1 ][ col - 1 ]));
+      let cell = document.createElement('div');
+      cell.classList.add('cell');
+      cell.classList.add('col' + row);
+      cell.classList.add('row' + col);
+      let boxRow = Math.floor((row - 1) / 3);
+      let boxCol = Math.floor((col - 1) / 3);
+      cell.classList.add('box' + ((boxRow * 3 + boxCol) + 1));
+      cell.setAttribute('id', 'No.' + count)
+      cell.setAttribute('data-ans', (board[ 0 ][ row - 1 ][ col - 1 ]));
       if (board[ 1 ][ row - 1 ][ col - 1 ] != 0) {
-        mass.textContent = board[ 1 ][ row - 1 ][ col - 1 ];
+        cell.textContent = board[ 1 ][ row - 1 ][ col - 1 ];
       }
-      containers.appendChild(mass);
+      containers.appendChild(cell);
       count++;
     }
   }
@@ -33,7 +37,6 @@ function createPanel() {
     panel.classList.add('panel');
     panel.textContent = i;
     panel.setAttribute('id', 'panelNo.' + i)
-    panel.setAttribute('onclick', 'inputNumber(' + i + ')');
     containers.appendChild(panel);
   }
 }

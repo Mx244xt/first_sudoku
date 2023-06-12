@@ -1,43 +1,41 @@
 let answer;
-let massNo;
+let cellNo;
 let missCounter = 0;
-let init = 0;
-let saveMass;
+let init = true;
+let saveCell;
 
-const targetElements = document.getElementsByClassName('mass');
-for (let i = 0; i < targetElements.length; i++) {
-  if (targetElements[ i ].textContent === "" && init == 0) {
-    colorizeSelection(targetElements[ i ]);
-    init++;
+let json = localStorage.getItem('board');
+let board = JSON.parse(json);
+
+window.addEventListener('DOMContentLoaded', () => {
+  targetCount();
+});
+
+const TARGET_ELEMENTS = document.getElementsByClassName('cell');
+for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
+  if (TARGET_ELEMENTS[ i ].textContent === "" && init) {
+    colorizeSelection(TARGET_ELEMENTS[ i ]);
+    init = false;
   }
-  targetElements[ i ].addEventListener('click', (event) => {
+  TARGET_ELEMENTS[ i ].addEventListener('click', (event) => {
     const clickedElement = event.target;
-    colorizeSelection(clickedElement)
+    colorizeSelection(clickedElement);
   });
 }
 
 function colorizeSelection(clickedElement) {
   const sameNumber = clickedElement.textContent
-  localStorage.setItem('ans', clickedElement.getAttribute('data-ans'));
-  saveMass = clickedElement
-  answer = clickedElement.getAttribute('data-ans')
-  massNo = clickedElement.getAttribute('id')
+  saveCell = clickedElement
+  answer = clickedElement.getAttribute('data-ans');
+  cellNo = clickedElement.getAttribute('id');
   const classList = clickedElement.classList;
-  for (let j = 0; j < targetElements.length; j++) {
-    const element = targetElements[ j ];
-    element.style.backgroundColor = '';
-    if (element.textContent == sameNumber && sameNumber != "") {
-      element.style.backgroundColor = '#b9def8';
-    } else {
-      element.style.backgroundColor = '#F5F5F5';
-    }
-    console.log(classList);
+  for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
+    TARGET_ELEMENTS[ i ].style.backgroundColor = '#F5F5F5';
+  }
+  for (let j = 0; j < TARGET_ELEMENTS.length; j++) {
+    const element = TARGET_ELEMENTS[ j ];
+    highlightSameNumber(element, sameNumber)
     areaHighlight(element, classList)
-    // for (let k = 1; k <= 3; k++) {
-    //   if (element.classList.contains(classList[ k ])) {
-    //     element.style.backgroundColor = '#e4e6f3';
-    //   }
-    // }
   }
   clickedElement.style.backgroundColor = '#b9def8';
 }
@@ -50,12 +48,18 @@ function areaHighlight(element, classList) {
   }
 }
 
+function highlightSameNumber(element, sameNumber) {
+  if (element.textContent == sameNumber && sameNumber != "") {
+    element.style.backgroundColor = '#b9def8';
+  } else {
+    element.style.backgroundColor = '#F5F5F5';
+  }
+}
 
-window.addEventListener('DOMContentLoaded', function () {
-  targetCount();
-});
+
+
 function targetCount() {
-  const targetElement = document.getElementsByClassName('mass');
+  const targetElement = document.getElementsByClassName('cell');
   let allCount = 0;
   for (let i = 1; i <= 9; i++) {
     const count = occurrences(targetElement, i);
@@ -63,7 +67,7 @@ function targetCount() {
       document.getElementById('panelNo.' + i).textContent = "";
       allCount++;
       if (allCount == 9) {
-        const finish = document.querySelectorAll(".mass");
+        const finish = document.querySelectorAll(".cell");
         finish.forEach(fin => fin.style.backgroundColor = '#e4e6f3');
         timerPause();
         const sakura = document.getElementById('container');
@@ -84,21 +88,77 @@ function occurrences(matrix, num) {
   return count;
 }
 
+let panels = document.getElementsByClassName('panel');
+for (let i = 0; i < panels.length; i++) {
+  panels[ i ].addEventListener('click', (event) => {
+    let panel = event.target;
+    inputNumber(panel.textContent)
+  });
+}
+
 function inputNumber(num) {
-  const data = localStorage.getItem('ans');
-  const ids = document.getElementById(massNo);
-  console.log(saveMass);
-  if (num == data) {
-    ids.textContent = num;
-    ids.style.backgroundColor = '#b9def8'
-    ids.style.color = '#4f7ca1'
-    targetCount();
-    colorizeSelection(saveMass)
-  } else {
-    if (!ids.textContent) {
-      ids.style.backgroundColor = '#f7c1ca'
-      missCounter++;
-      document.getElementById('miss').textContent = "miss: " + missCounter;
+  if (num) {
+    const ids = document.getElementById(cellNo);
+    if (num == answer) {
+      ids.textContent = num;
+      ids.style.backgroundColor = '#b9def8'
+      ids.style.color = '#4f7ca1'
+      targetCount();
+      colorizeSelection(saveCell)
+    } else {
+      if (!ids.textContent) {
+        ids.textContent = num;
+        ids.style.backgroundColor = '#f7c1ca'
+        ids.style.color = 'red'
+        missAnimetion(ids);
+        missCounter++;
+        document.getElementById('miss').textContent = "miss: " + missCounter;
+        setTimeout(() => {
+          ids.style.backgroundColor = '#b9def8'
+          ids.textContent = null;
+        }, 3000);
+      }
     }
+  }
+
+  function missAnimetion() {
+    document.getElementById(cellNo).animate([
+      {
+        offset: 0.00,
+        transform: 'translate(0, 0)'
+      },
+      {
+        offset: 0.05,
+        transform: 'translate(-10%, 0)'
+      },
+      {
+        offset: 0.10,
+        transform: 'translate(10%, 0)'
+      },
+      {
+        offset: 0.15,
+        transform: 'translate(-10%, 0)'
+      },
+      {
+        offset: 0.20,
+        transform: 'translate(10%, 0)'
+      },
+      {
+        offset: 0.25,
+        transform: 'translate(-10%, 0)'
+      },
+      {
+        offset: 0.30,
+        transform: 'translate(0, 0)'
+      },
+      {
+        offset: 1.00,
+        transform: 'translate(0, 0)'
+      }
+    ],
+      {
+        duration: 3000,
+      }
+    );
   }
 }
