@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>数独アプリ</title>
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/sudoku.css" />
     <link rel="stylesheet" href="./css/finish.css" />
     <link rel="icon" href="./image/favicons/favicon.ico" id="favicon" />
@@ -15,21 +16,37 @@
     />
   </head>
   <body>
+    <div id="side" class="close">
+      <nav>
+        <ul class="side_menu">
+          <li>テスト</li>
+          <label class="switch__label">
+            <input type="checkbox" class="switch__input" />
+            <span class="switch__content"></span>
+            <span class="switch__circle"></span>
+          </label>
+        </ul>
+      </nav>
+    </div>
     <div id="container" class="cherry-blossom-container">
       <h1>初めての数独</h1>
       <section>
-        <input
-          type="button"
-          value="戻る"
-          onclick="location.href='./index.html'"
-        />
+        <a href="./index.html">戻る</a>
         <div id="miss"></div>
         <div id="haed">
           <button id="resetTime">
-            <img class="timerIcon" src="./image/icon/reset_button.png" alt="再生" />
+            <img
+              class="timerIcon"
+              src="./image/icon/reset_button.png"
+              alt="リセット"
+            />
           </button>
           <button id="startTime">
-            <img class="timerIcon" src="./image/icon/play_button.png" alt="再生" />
+            <img
+              class="timerIcon"
+              src="./image/icon/play_button.png"
+              alt="再生"
+            />
           </button>
           <button id="pauseTime" hidden>
             <img
@@ -44,8 +61,8 @@
       </section>
       <div id="grid-container"></div>
       <!-- <section>
-          <p class="iconText">
-            <img class="icon" src="./image/Undo.png" alt="元に戻す" />元に戻す
+        <p class="iconText">
+          <img class="icon" src="./image/Undo.png" alt="元に戻す" />元に戻す
         </p>
         <p class="iconText">
           <img class="icon" src="./image/eraser.png" alt="消しゴム" />消しゴム
