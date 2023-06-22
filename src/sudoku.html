@@ -16,17 +16,65 @@
     />
   </head>
   <body>
-    <div id="side" class="close">
+    <div class="modal"></div>
+    <div class="side_menu close">
+      <div class="switch_outer">
+        <div class="toggle_switch"></div>
+      </div>
       <nav>
-        <ul class="side_menu">
-          <li>テスト</li>
+        <div class="close_button">
+          <button>
+            <img
+              class="side_menu_icon"
+              src="./image/icon/back_button.png"
+              alt="閉じる"
+            />
+          </button>
+        </div>
+        <ul class="side_menu_list">
+          <li>同じ数字をハイライト</li>
           <label class="switch__label">
-            <input type="checkbox" class="switch__input" />
+            <input
+              id="highlightSameNumber"
+              type="checkbox"
+              class="switch__input"
+              checked
+            />
             <span class="switch__content"></span>
             <span class="switch__circle"></span>
           </label>
         </ul>
+        <div class="feature_description">
+          数字付きマスを選択する時、同じ数字をハイライト
+        </div>
+        <ul class="side_menu_list">
+          <li>エリアをハイライト</li>
+          <label class="switch__label">
+            <input
+              id="areaHighlight"
+              type="checkbox"
+              class="switch__input"
+              checked
+            />
+            <span class="switch__content"></span>
+            <span class="switch__circle"></span>
+          </label>
+        </ul>
+        <div class="feature_description">
+          選んだマスが所在する行、列、ブロックをハイライト
+        </div>
       </nav>
+    </div>
+    <div class="header">
+      <div class="close_button">
+        <button>
+          <img
+            class="side_menu_icon"
+            src="./image/icon/setting_button.png"
+            alt="設定"
+          />
+        </button>
+      </div>
     </div>
     <div id="container" class="cherry-blossom-container">
       <h1>初めての数独</h1>

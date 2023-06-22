@@ -1,6 +1,10 @@
 {
   "liveServer.settings.port": 5501,
   "[markdown]": {
-      "editor.quickSuggestions": true,
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+      },
   }
 }

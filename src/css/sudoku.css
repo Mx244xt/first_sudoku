@@ -1,9 +1,22 @@
+:root {
+  /* バックグラウンドカラー */
+  --base-color: #FFFFFF;
+  --theme-color: #5AB4EB;
+  --side-color: #e5e5e5;
+}
+:root {
+  /* バックグラウンドカラー */
+  --base-color: #ffffff;
+  --theme-color: #5aafeb;
+  --side-color: #e5e5e5;
+}
+
 body {
   margin: 0;
-  padding: 5vmin 0;
-  background-color: #f5f5f5;
-  /* background-image: url(../image/background_image/In_the_city_daytime.jpg); */
+  color: #000;
+  background-color: var(--base-color);
   font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+  font-size: 3vmin;
 }
 
 a {
@@ -20,25 +33,81 @@ button {
   appearance: none;
 }
 
-#side {
+.header {
+  width: 100%;
+  height: 8vmin;
+  background-color: var(--theme-color);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 1vmin;
+}
+
+.close_button {
+  margin: 2vmin;
+}
+
+.side_menu_icon {
+  display: flex;
+  justify-content: center;
+  height: 3vmin;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);;
+}
+
+.modal_open {
+  display: block;
+}
+
+.side_menu {
   width: 30%;
   height: 100%;
-  padding: 3vmin;
-  background-color: #848484;
+  background-color: var(--side-color);
   z-index: 10;
   position: absolute;
   right: 0%;
+  font-size: 2vmin;
 }
 
-#side.close {
+.side_menu.close {
   right: -100%;
+  display: none;
 }
 
-/* トグルボタン start*/
+.feature_description {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 5vmin;
+  font-size: 1.5vmin;
+  color: #999;
+  padding-right: 1.5vmin;
+}
+
+.side_menu_list {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: var(--base-color);
+  height: 5vmin;
+}
+
 .switch__label {
   width: 50px;
   position: relative;
   display: inline-block;
+  right: 0%;
+  margin: 1vmin;
 }
 
 .switch__content {
@@ -60,7 +129,7 @@ button {
   left: 0;
   border: 1.5px solid #E5E5EA;
   border-radius: 30px;
-  background-color: #fff;
+  background-color: var(--base-color);
 }
 
 .switch__content:after {
@@ -95,7 +164,7 @@ button {
   height: 27px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: var(--base-color);
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   -ms-transition: all .5s;
@@ -114,10 +183,6 @@ button {
   width: 100%;
   height: 100%;
 }
-
-/*トグルボタン end*/
-
-
 
 #container {
   display: grid;
@@ -145,39 +210,39 @@ button {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(9, 1fr);
-  border: 3px solid #848484;
+  border: 1.5px solid #848484;
   width: 60vmin;
   height: 60vmin;
-  background-color: #f5f5f5;
+  background-color: var(--base-color);
 }
 
 .cell {
   text-align: center;
   position: relative;
   justify-content: center;
-  border: 1px solid #cfcfcf;
+  border: .5px solid #cfcfcf;
   font-size: 4vmin;
   cursor: pointer;
 }
 
 .col3,
 .col6 {
-  border-bottom: 1.5px solid #848484;
+  border-bottom: .5px solid #848484;
 }
 
 .col4,
 .col7 {
-  border-top: 1.5px solid #848484;
+  border-top: .5px solid #848484;
 }
 
 .row3,
 .row6 {
-  border-right: 1.5px solid #848484;
+  border-right: .5px solid #848484;
 }
 
 .row4,
 .row7 {
-  border-left: 1.5px solid #848484;
+  border-left: .5px solid #848484;
 }
 
 section {
@@ -208,11 +273,11 @@ section {
   text-align: center;
   position: relative;
   justify-content: center;
-  border: none;
+  border: .1vmin solid #4f7ca1;
   box-shadow: 0px 5px 5px #e2e2e2;
-  background-color: #ffffff;
+  background-color: var(--base-color);
   margin: 0 1px;
-  border-radius: 10%;
+  border-radius: 1vmin;
   font-size: 4vmin;
   color: #4f7ca1;
 }
@@ -223,6 +288,10 @@ section {
   #grid-container {
     width: 90vmin;
     height: 90vmin;
+  }
+
+  .side_menu {
+    width: 100%;
   }
 
   .cell {
@@ -239,7 +308,7 @@ section {
     height: 10vmin;
     margin: 0 0.1vw;
     font-size: 6vw;
-    border-radius: 5%;
-    border: 1px solid #4f7ca1;
+    border-radius: 1vmin;
+    border: .1vmin solid #4f7ca1;
   }
 }
