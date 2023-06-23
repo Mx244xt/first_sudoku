@@ -1,13 +1,5 @@
 :root {
-  /* バックグラウンドカラー */
   --base-color: #FFFFFF;
-  --theme-color: #5AB4EB;
-  --side-color: #e5e5e5;
-}
-:root {
-  /* バックグラウンドカラー */
-  --base-color: #ffffff;
-  --theme-color: #5aafeb;
   --side-color: #e5e5e5;
 }
 
@@ -36,7 +28,7 @@ button {
 .header {
   width: 100%;
   height: 8vmin;
-  background-color: var(--theme-color);
+  background-color: var(--base-color);
   display: flex;
   justify-content: right;
   align-items: center;
@@ -62,7 +54,8 @@ button {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.3);;
+  background-color: rgba(0, 0, 0, 0.3);
+  ;
 }
 
 .modal_open {
