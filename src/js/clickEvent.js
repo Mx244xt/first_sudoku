@@ -114,11 +114,11 @@ function colorizeSelection(clickedElement) {
   clickedElement.style.backgroundColor = CELL_COLOR;
 }
 
-function areaHighlight(ELEMENT, CLASS_LIST) {
+function areaHighlight(element, classList) {
   if (!areaHighlightOff) return;
   for (let k = 1; k <= 3; k++) {
-    if (ELEMENT.classList.contains(CLASS_LIST[ k ])) {
-      ELEMENT.style.backgroundColor = LINE_COLOR;
+    if (element.classList.contains(classList[ k ])) {
+      element.style.backgroundColor = LINE_COLOR;
     }
   }
 }
