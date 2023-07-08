@@ -97,6 +97,19 @@ function cellSelectionEvent() {
 }
 cellSelectionEvent();
 
+//メモ機能スタート
+function memo() {
+  console.log("メモクリック")
+  for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
+    let tar = TARGET_ELEMENTS[ i ]
+    if(!tar.textContent) {
+      console.log(tar);
+    }  
+  }
+}
+
+//メモ機能エンド
+
 function colorizeSelection(clickedElement) {
   const SAME_NUMBER = clickedElement.textContent;
   saveCell = clickedElement
