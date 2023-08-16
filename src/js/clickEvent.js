@@ -15,11 +15,11 @@ const MISS_COLOR = '#f7c1ca';
 const MISS_TEXT_COLOR = '#FF0000';
 const ANSWER_COLOR = '#4f7ca1';
 
-const TARGET_ELEMENTS = document.getElementsByClassName('cell');
+const targetElements = document.getElementsByClassName('cell');
 const body = document.body;
-const SIDE_MENU = document.getElementsByClassName('side_menu');
-const CLOSE_BUTTON = document.getElementsByClassName("close_button");
-const MODAL = document.querySelector(".modal");
+const sideMenu = document.getElementsByClassName('side_menu');
+const closeButton = document.getElementsByClassName("close_button");
+const modal = document.querySelector(".modal");
 
 function initialization() {
   window.addEventListener('DOMContentLoaded', () => {
@@ -28,22 +28,22 @@ function initialization() {
 }
 initialization();
 
-function sideMenu() {
-  for (let i = 0; i < CLOSE_BUTTON.length; i++) {
-    CLOSE_BUTTON[ i ].addEventListener('click', () => {
-      for (let i = 0; i < SIDE_MENU.length; i++) {
-        SIDE_MENU[ i ].classList.toggle('close');
-        MODAL.classList.toggle("modal_open");
+function sideMenuEvent() {
+  for (let i = 0; i < closeButton.length; i++) {
+    closeButton[ i ].addEventListener('click', () => {
+      for (let i = 0; i < sideMenu.length; i++) {
+        sideMenu[ i ].classList.toggle('close');
+        modal.classList.toggle("modal_open");
       }
     });
   }
 }
-sideMenu();
+sideMenuEvent();
 
 document.addEventListener("click", (e) => {
-  if (e.target == MODAL) {
-    MODAL.classList.toggle("modal_open");
-    SIDE_MENU[ 0 ].classList.toggle('close');
+  if (e.target == modal) {
+    modal.classList.toggle("modal_open");
+    sideMenu[ 0 ].classList.toggle('close');
   }
 });
 
@@ -83,13 +83,13 @@ function areaHighlightFlag() {
 areaHighlightFlag();
 
 function cellSelectionEvent() {
-  for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
-    if (TARGET_ELEMENTS[ i ].textContent === "" && init) {
-      colorizeSelection(TARGET_ELEMENTS[ i ]);
-      clickedElement = TARGET_ELEMENTS[ i ];
+  for (let i = 0; i < targetElements.length; i++) {
+    if (targetElements[ i ].textContent === "" && init) {
+      colorizeSelection(targetElements[ i ]);
+      clickedElement = targetElements[ i ];
       init = false;
     }
-    TARGET_ELEMENTS[ i ].addEventListener('click', (event) => {
+    targetElements[ i ].addEventListener('click', (event) => {
       clickedElement = event.target;
       colorizeSelection(clickedElement);
     });
@@ -97,30 +97,17 @@ function cellSelectionEvent() {
 }
 cellSelectionEvent();
 
-//メモ機能スタート
-function memo() {
-  console.log("メモクリック")
-  for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
-    let tar = TARGET_ELEMENTS[ i ]
-    if(!tar.textContent) {
-      console.log(tar);
-    }  
-  }
-}
-
-//メモ機能エンド
-
 function colorizeSelection(clickedElement) {
   const SAME_NUMBER = clickedElement.textContent;
   saveCell = clickedElement
   answer = clickedElement.getAttribute('data-ans');
   cellNo = clickedElement.getAttribute('id');
   const CLASS_LIST = clickedElement.classList;
-  for (let i = 0; i < TARGET_ELEMENTS.length; i++) {
-    TARGET_ELEMENTS[ i ].style.backgroundColor = '';
+  for (let i = 0; i < targetElements.length; i++) {
+    targetElements[ i ].style.backgroundColor = '';
   }
-  for (let j = 0; j < TARGET_ELEMENTS.length; j++) {
-    const ELEMENT = TARGET_ELEMENTS[ j ];
+  for (let j = 0; j < targetElements.length; j++) {
+    const ELEMENT = targetElements[ j ];
     highlightSameNumber(ELEMENT, SAME_NUMBER)
     areaHighlight(ELEMENT, CLASS_LIST)
   }

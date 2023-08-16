@@ -1,26 +1,26 @@
 let elapsedTime = 0;
 let timerInterval;
-const START_BUTTON = document.getElementById('startTime');
-const PAUSE_BUTTON = document.getElementById('pauseTime');
-const RESET_BUTTON = document.getElementById('resetTime')
+const startButton = document.getElementById('startTime');
+const pauseButton = document.getElementById('pauseTime');
+const resetButton = document.getElementById('resetTime')
 
 window.addEventListener('DOMContentLoaded', function () {
   timerStrat();
 });
-START_BUTTON.addEventListener('click', () => {
+startButton.addEventListener('click', () => {
   timerStrat();
 });
-PAUSE_BUTTON.addEventListener('click', () => {
+pauseButton.addEventListener('click', () => {
   timerPause();
 });
-RESET_BUTTON.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
   location.reload();
 });
 
 function timerStrat() {
-  START_BUTTON.setAttribute('hidden', 'ture');
-  PAUSE_BUTTON.removeAttribute('hidden');
-  RESET_BUTTON.setAttribute('hidden', 'ture');
+  startButton.setAttribute('hidden', 'ture');
+  pauseButton.removeAttribute('hidden');
+  resetButton.setAttribute('hidden', 'ture');
   timerInterval = setInterval(() => {
     elapsedTime++;
     displayTime(elapsedTime);
@@ -28,17 +28,17 @@ function timerStrat() {
 }
 
 function timerPause() {
-  PAUSE_BUTTON.setAttribute('hidden', 'ture');
-  START_BUTTON.removeAttribute('hidden');
-  RESET_BUTTON.removeAttribute('hidden');
+  pauseButton.setAttribute('hidden', 'ture');
+  startButton.removeAttribute('hidden');
+  resetButton.removeAttribute('hidden');
   clearInterval(timerInterval);
 }
 
 function displayTime(elapsedTime) {
-  const HOURS = Math.floor(elapsedTime / 3600);
-  const MINUTES = Math.floor((elapsedTime % 3600) / 60);
-  const SECONDS = elapsedTime % 60;
-  let CurrentTime = `${padZero(HOURS)}:${padZero(MINUTES)}:${padZero(SECONDS)}`;
+  const hours = Math.floor(elapsedTime / 3600);
+  const minutes = Math.floor((elapsedTime % 3600) / 60);
+  const seconds = elapsedTime % 60;
+  let CurrentTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
   timer.textContent = CurrentTime;
 }
 

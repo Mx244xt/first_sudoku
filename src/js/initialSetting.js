@@ -1,10 +1,10 @@
-const URL_PARAMS = new URLSearchParams(window.location.search);
-const DIFFICULTY = URL_PARAMS.get('value');
+const urlParams = new URLSearchParams(window.location.search);
+const difficulty = urlParams.get('value');
 
 localStorage.clear();
 async function createBoard() {
-  const GRID_CONTAINER = document.getElementById("grid-container");
-  let board = problemGeneration(DIFFICULTY);
+  const gridContainer = document.getElementById("grid-container");
+  let board = problemGeneration(difficulty);
   if(window.localStorage) {
     let json = JSON.stringify(board, undefined, 1);
     localStorage.setItem('board', json);
@@ -24,20 +24,20 @@ async function createBoard() {
       if (board[ 1 ][ row - 1 ][ col - 1 ] != 0) {
         cell.textContent = board[ 1 ][ row - 1 ][ col - 1 ];
       }
-      GRID_CONTAINER.appendChild(cell);
+      gridContainer.appendChild(cell);
       count++;
     }
   }
 }
 
 function createPanel() {
-  const PANEL_CONTAINER = document.getElementById("inputPanel-container");
+  const panelContainr = document.getElementById("inputPanel-container");
   for (let i = 1; i <= 9; i++) {
     let panel = document.createElement('button');
     panel.classList.add('panel');
     panel.textContent = i;
     panel.setAttribute('id', 'panelNo.' + i)
-    PANEL_CONTAINER.appendChild(panel);
+    panelContainr.appendChild(panel);
   }
 }
 createBoard();

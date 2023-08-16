@@ -286,7 +286,7 @@ section {
   .side_menu {
     width: 100%;
   }
-
+  
   .cell {
     font-size: 6vw;
   }
@@ -303,5 +303,5 @@ section {
     font-size: 6vw;
     border-radius: 1vmin;
     border: .1vmin solid #4f7ca1;
-  }
+  } 
 }
