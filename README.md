@@ -1,13 +1,14 @@
 # first_sudoku
-初めての数独
+ポートフォリオのためにVanilla JavaScriptで作成しました。
 
-ブレークポイントでトグルボタンのCSSを変更するようにしては？
+iOSアプリの「ナンプレ　パズル」 と言うアプリを参考に作成しました。
 
-・作った過程が大切
-フロントの作成スキルと
-AWSのデプロイのスキルをアピールする。
-  
+WEBで公開していますので、遊んでみてください。
 
-webサービスの実績があればなお良い。
-  認証と管理画面があればOK
-  
+URL:[https://www.mx244.com/](https://www.mx244.com/)
+
+アップデート版はReactで作成しており、完成予定は未定なのであしからず。
+
+クリア後に桜が舞いますがそちらは、下記サイトのコードを使わせて頂いています。
+
+URL:https://web-dev.tech/front-end/javascript/cherry-blossom-petal-falling-effect/
