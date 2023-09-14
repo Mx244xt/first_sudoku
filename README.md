@@ -36,6 +36,10 @@ iOS アプリの「ナンプレ　パズル」 と言うアプリを参考に作
 - CSS
 - JavaScript
 
+### デザイン
+- figma
+  https://www.figma.com/file/JOBPoB2QkWH4rtDROTKtUm/%E6%95%B0%E7%8B%AC%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?type=design&node-id=11%3A2&mode=design&t=OqsQZ9PV0HYpMVAU-1
+
 ## インフラ構成図
 <img src="https://data-m244.s3.amazonaws.com/first_sudoku/first_sudoku_infra.jpg" alt="インフラ構成図" width="80%" />
 
