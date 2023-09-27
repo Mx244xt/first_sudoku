@@ -2,7 +2,7 @@ let elapsedTime = 0;
 let timerInterval;
 const startButton = document.getElementById('startTime');
 const pauseButton = document.getElementById('pauseTime');
-const resetButton = document.getElementById('resetTime')
+const resetButton = document.getElementById('resetTime');
 
 window.addEventListener('DOMContentLoaded', function () {
   timerStrat();

@@ -1,5 +1,5 @@
 :root {
-  --base-color: #FFFFFF;
+  --base-color: #ffffff;
   --side-color: #e5e5e5;
 }
 
@@ -7,7 +7,7 @@ body {
   margin: 0;
   color: #000;
   background-color: var(--base-color);
-  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+  font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-size: 3vmin;
 }
 
@@ -32,17 +32,18 @@ button {
   display: flex;
   justify-content: right;
   align-items: center;
-  padding: 1vmin;
+  /* padding: 1vmin; */
 }
 
 .close_button {
-  margin: 2vmin;
+  margin: 0.5rem;
 }
 
 .side_menu_icon {
   display: flex;
   justify-content: center;
-  height: 3vmin;
+  height: 1.25rem;
+  /* 4vmin; */
 }
 
 .modal {
@@ -55,7 +56,6 @@ button {
   width: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
-  ;
 }
 
 .modal_open {
@@ -81,10 +81,10 @@ button {
   display: flex;
   justify-content: right;
   align-items: center;
-  height: 5vmin;
-  font-size: 1.5vmin;
+  height: 2.75rem;
+  font-size: 0.75rem;
   color: #999;
-  padding-right: 1.5vmin;
+  padding-right: 0.5rem;
 }
 
 .side_menu_list {
@@ -92,23 +92,24 @@ button {
   justify-content: right;
   align-items: center;
   background-color: var(--base-color);
-  height: 5vmin;
+  height: 2.75rem;
+  font-size: 1rem;
 }
 
 .switch__label {
-  width: 50px;
+  width: 3.125rem;
   position: relative;
   display: inline-block;
-  right: 0%;
-  margin: 1vmin;
+  right: 0;
+  margin: 0.25rem;
 }
 
 .switch__content {
   display: block;
   cursor: pointer;
   position: relative;
-  border-radius: 30px;
-  height: 31px;
+  border-radius: 0.25rem;
+  height: 2rem;
   overflow: hidden;
 }
 
@@ -120,7 +121,7 @@ button {
   height: calc(100% - 3px);
   top: 0;
   left: 0;
-  border: 1.5px solid #E5E5EA;
+  border: 1.5px solid #e5e5ea;
   border-radius: 30px;
   background-color: var(--base-color);
 }
@@ -135,11 +136,11 @@ button {
   top: 50%;
   left: 50%;
   border-radius: 30px;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .switch__input {
@@ -158,18 +159,18 @@ button {
   -webkit-border-radius: 20px;
   border-radius: 20px;
   background-color: var(--base-color);
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.switch__input:checked~.switch__circle {
+.switch__input:checked ~ .switch__circle {
   left: 21px;
 }
 
-.switch__input:checked~.switch__content:after {
+.switch__input:checked ~ .switch__content:after {
   background-color: #00c4cc;
   top: 0;
   left: 0;
@@ -183,6 +184,11 @@ button {
   text-align: center;
 }
 
+#title {
+  font-size: 2rem;
+  margin: 0.8rem 0;
+}
+
 #haed {
   display: flex;
   margin: 0 0 0 auto;
@@ -190,13 +196,21 @@ button {
   align-items: center;
 }
 
+#back_page {
+  font-size: 1.375rem;
+}
+
 #miss {
   margin-left: 1vmin;
 }
 
 .timerIcon {
-  height: 2vh;
-  margin: 0 5px;
+  height: 1.25rem;
+  margin: 5px;
+}
+
+#timer {
+  font-size: 1.375rem;
 }
 
 #grid-container {
@@ -213,29 +227,29 @@ button {
   text-align: center;
   position: relative;
   justify-content: center;
-  border: .5px solid #cfcfcf;
+  border: 0.5px solid #cfcfcf;
   font-size: 4vmin;
   cursor: pointer;
 }
 
 .col3,
 .col6 {
-  border-bottom: .5px solid #848484;
+  border-bottom: 0.5px solid #848484;
 }
 
 .col4,
 .col7 {
-  border-top: .5px solid #848484;
+  border-top: 0.5px solid #848484;
 }
 
 .row3,
 .row6 {
-  border-right: .5px solid #848484;
+  border-right: 0.5px solid #848484;
 }
 
 .row4,
 .row7 {
-  border-left: .5px solid #848484;
+  border-left: 0.5px solid #848484;
 }
 
 section {
@@ -257,7 +271,6 @@ section {
   justify-content: center;
   flex-direction: row;
   height: 10vmin;
-
 }
 
 .panel {
@@ -266,7 +279,7 @@ section {
   text-align: center;
   position: relative;
   justify-content: center;
-  border: .1vmin solid #4f7ca1;
+  border: 0.1vmin solid #4f7ca1;
   box-shadow: 0px 5px 5px #e2e2e2;
   background-color: var(--base-color);
   margin: 0 1px;
@@ -277,7 +290,6 @@ section {
 
 /* メディアクエリ */
 @media screen and (max-width: 600px) {
-
   #grid-container {
     width: 90vmin;
     height: 90vmin;
@@ -286,7 +298,7 @@ section {
   .side_menu {
     width: 100%;
   }
-  
+
   .cell {
     font-size: 6vw;
   }
@@ -302,6 +314,6 @@ section {
     margin: 0 0.1vw;
     font-size: 6vw;
     border-radius: 1vmin;
-    border: .1vmin solid #4f7ca1;
-  } 
+    border: 0.1vmin solid #4f7ca1;
+  }
 }
