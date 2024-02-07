@@ -1,5 +1,9 @@
 # first_sudoku
 
+## URL
+
+https://sudoku.mx244.com/
+
 ## サイト概要
 
 Vanilla JavaScript で作成した数独アプリです。
@@ -14,9 +18,8 @@ miss 回数に上限は設けていないので、何度でもチャレンジで
 
 Timer 機能もあるので、クリアまでの時間をタイムアタックしてみるのも良いでしょう。
 
-### サイト URL
-
-https://sudoku.mx244.com/
+<img src="https://data-m244.s3.amazonaws.com/first_sudoku/Difficulty_selection.gif" alt="難易度選択" width="36%" /> <img src="https://data-m244.s3.amazonaws.com/first_sudoku/setting.gif" alt="設定" width="60%" />
+<img src="https://data-m244.s3.amazonaws.com/first_sudoku/Highlight_same_numbers.gif" alt="同じ数字をハイライト" width="36%" /> <img src="https://data-m244.s3.amazonaws.com/first_sudoku/Mistake.gif" alt="missカウント" width="36%" /> 
 
 ## 制作背景
 
@@ -37,19 +40,21 @@ iOS アプリの「ナンプレ　パズル」 と言うアプリを参考に作
 - JavaScript
 
 ### デザイン
+
 - figma
-  https://www.figma.com/file/JOBPoB2QkWH4rtDROTKtUm/%E6%95%B0%E7%8B%AC%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?type=design&node-id=11%3A2&mode=design&t=OqsQZ9PV0HYpMVAU-1
 
 ## インフラ構成図
+
 <img src="https://data-m244.s3.amazonaws.com/first_sudoku/first_sudoku_infra.jpg" alt="インフラ構成図" width="80%" />
 
 ## 機能
 
 TopPage :
+
 - 難易度選択機能
-<img src="https://data-m244.s3.amazonaws.com/first_sudoku/TopPage.png" alt="インフラ構成図" width="30%" />
 
 数独画面 :
+
 - 問題自動作成
 - 初期画面でカーソルを数字が入っていないマスへセットされる。
 - エリアハイライト
@@ -69,11 +74,12 @@ TopPage :
   - エリアに同じ数字が9個入力されている場合、入力ボタンからその数字が非表示になる。
 - 設定画面表示
   - 歯車アイコンをクリック/タップで設定画面を表示する。
-<img src="https://data-m244.s3.amazonaws.com/first_sudoku/Sudoku.png" alt="インフラ構成図" width="50%" />
-
+  
 設定画面 :
-- エリアハイライト機能をON/OFFできる。
-- 同じ数字のハイライト機能をON/OFFできる。
+
+- エリアハイライト機能を ON/OFF できる。
+- 同じ数字のハイライト機能を ON/OFF できる。
 - 閉じるボタン
-  - < ボタンをクリック、または、モーダル部分をクリックで設定画面を閉じる。 
-<img src="https://data-m244.s3.amazonaws.com/first_sudoku/setting.png" alt="インフラ構成図" width="50%" />
+  - ボタンをクリック、または、モーダル部分をクリックで設定画面を閉じる。
+    
+
