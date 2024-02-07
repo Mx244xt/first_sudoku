@@ -24,6 +24,7 @@ h3 {
 
 button {
   width: 60vmin;
+  font-weight: bold;
   margin: 10px;
   padding: 15px 30px;
   background-color: #b9def8;
@@ -32,6 +33,11 @@ button {
   border-radius: 5px;
   font-size: 3vmin;
   cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  opacity: 0.5;
 }
 
 #demo {

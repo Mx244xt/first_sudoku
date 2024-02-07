@@ -32,7 +32,6 @@ button {
   display: flex;
   justify-content: right;
   align-items: center;
-  /* padding: 1vmin; */
 }
 
 .close_button {
@@ -42,8 +41,7 @@ button {
 .side_menu_icon {
   display: flex;
   justify-content: center;
-  height: 1.25rem;
-  /* 4vmin; */
+  height: 1.5rem;
 }
 
 .modal {
@@ -166,11 +164,11 @@ button {
   transition: all 0.5s;
 }
 
-.switch__input:checked ~ .switch__circle {
+.switch__input:checked~.switch__circle {
   left: 21px;
 }
 
-.switch__input:checked ~ .switch__content:after {
+.switch__input:checked~.switch__content:after {
   background-color: #00c4cc;
   top: 0;
   left: 0;
@@ -201,6 +199,7 @@ button {
 }
 
 #miss {
+  font-size: 1.375rem;
   margin-left: 1vmin;
 }
 
@@ -288,7 +287,12 @@ section {
   color: #4f7ca1;
 }
 
-/* メディアクエリ */
+@media screen and (min-width: 601px) {
+  .panel:hover {
+    background-color: #e7f3ff;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #grid-container {
     width: 90vmin;
@@ -315,5 +319,9 @@ section {
     font-size: 6vw;
     border-radius: 1vmin;
     border: 0.1vmin solid #4f7ca1;
+  }
+
+  .panel:active {
+    background-color: #e7f3ff;
   }
 }
