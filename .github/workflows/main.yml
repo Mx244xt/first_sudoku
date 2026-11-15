@@ -3,12 +3,15 @@ on:
   push:
       branches:
         - master
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
       - name: Deploy
         env:
